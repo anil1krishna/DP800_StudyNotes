@@ -1,0 +1,44 @@
+-----------------
+VECTOR Functions
+------------------
+
+VECTOR_NORMALIZE -> can prepare vector values so magnitude does not distort similarity calculations where normalization is required. 
+                 -> should be used when the metric design requires normalized vector values.
+
+VECTORPROPERTY -> is appropriate for inspecting vector properties such as dimensions or related metadata.
+
+VECTOR_DISTANCE -> is used to compute similarity or distance between vector values for nearest neighbor ranking. 
+
+---------------
+JSON Functions
+---------------
+
+JSON_VALUE -> extracts scalar values from JSON and does not naturally expand an array into rows.. 
+           -> with an explicit schema can project JSON properties into relational columns.
+
+OPENJSON -> parse a JSON array and return elements as relational rows.  
+
+JSON_ARRAYAGG -> aggregates multiple values into a JSON array
+
+JSON_OBJECT -> creates JSON output and does not compare embeddings.
+
+--------------------
+Regular Expressions
+--------------------
+
+REGEXP_LIKE -> validates strings against patterns and does not aggregate values. 
+
+MATCH -> is used for graph queries and does not normalize vectors.
+
+EDIT_DISTANCE -> compares strings, not vectors. 
+
+REGEXP_SUBSTR -> extracts text by pattern and is unrelated to vector column properties.
+
+JARO_WINKLER_DISTANCE -> compares text similarity and does not parse JSON
+
+REGEXP_MATCHES -> against raw JSON is brittle and not the preferred JSON parsing approach.
+
+REGEXP_COUNT -> counts text pattern matches rather than vector similarity. 
+
+
+
