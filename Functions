@@ -40,5 +40,20 @@ REGEXP_MATCHES -> against raw JSON is brittle and not the preferred JSON parsing
 
 REGEXP_COUNT -> counts text pattern matches rather than vector similarity. 
 
+-----------------
+Window Functions
+-----------------
+
+NTILE(4) distributes the ordered rows of each partition into four groups of nearly equal size
+
+LEAD returns a value from a following row without a self-join
+
+LAG looks backward instead. 
+
+ROW_NUMBER assigns a unique sequential number within each partition
+
+DENSE_RANK assigns the same number to tied rows, which would keep multiple rows. 
+
+FIRST_VALUE returns the first value in the ordered window
 
 
