@@ -13,6 +13,21 @@ VECTOR_DISTANCE -> is used to compute similarity or distance between vector valu
 JSON Functions
 ---------------
 
+JSON Path -> is the syntax SQL Server uses to navigate inside JSON documents.
+          -> It is required by functions like JSON_VALUE, JSON_QUERY, JSON_MODIFY, and OPENJSON.
+Key points:
+          A path starts with $ (the root).
+          Use .key to access object properties.
+          Use [index] to access array elements (0‑based).
+
+JSON_VALUE(@json, '$.user.name')
+JSON_QUERY(@json, '$.items[0]')
+OPENJSON(@json, 'lax $.orders[*]')
+
+JSON AUTO (FOR JSON AUTO) - is a SQL Server output mode used with FOR JSON to automatically convert query results into JSON without requiring manual shaping.
+
+JSON_ARRAY() -> constructs a JSON array from one or more SQL expressions. It is a built‑in SQL Server function.
+
 JSON_VALUE -> extracts scalar values from JSON and does not naturally expand an array into rows.. 
            -> with an explicit schema can project JSON properties into relational columns.
 
@@ -20,7 +35,11 @@ OPENJSON -> parse a JSON array and return elements as relational rows.
 
 JSON_ARRAYAGG -> aggregates multiple values into a JSON array
 
-JSON_OBJECT -> creates JSON output and does not compare embeddings.
+JSON_OBJECT -> constructs a JSON object from key–value pairs.
+
+JSON_QUERY — Extract JSON Objects/Arrays. Returns a JSON object or array from a JSON string. It does not return scalar values.
+
+JSON_MODIFY — Update JSON Values. Updates a property inside a JSON string and returns the updated JSON.
 
 --------------------
 Regular Expressions
